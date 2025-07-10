@@ -1,24 +1,77 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
+import Features from './components/Features-Box/Features'
+import Password from './components/password/password';
+import PasswordGenerator from './components/PasswordGenerator'
+import tente from './PasswordGeneretor/tente.jpg'
+import castle from './PasswordGeneretor/castle.jpg'
+import house from './PasswordGeneretor/house.jpg'
 
-function App() {
+import { useState } from 'react'
+
+const App = () => {
+  const[useLettre,setUseLettre] = useState(false);
+  const[useNombre,setUseNombre] = useState(false);
+  const[useSymbole,setUseSymbole] = useState(false);
+  const[Remember,setRemember] = useState(false);
+  const[Length,setLength] = useState(0);
+  const[PasswordVariable,setPassword] = useState({ password: "", type: "" });
+
+    let pic = "";
+    if(PasswordVariable.type==="weak")
+    {
+        pic=tente;
+    }
+    else
+    {
+        if(PasswordVariable.type==="good")
+        {
+            pic=house;
+        }
+        else
+        {
+            pic=castle;
+        }
+    }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Navbar />
+      <Password PasswordVariable={PasswordVariable.password} />
+      <div className='picture' >
+      <Features 
+        useLettre={useLettre}
+        setUseLettre={setUseLettre}
+        useNombre={useNombre}
+        setUseNombre={setUseNombre}
+        useSymbole={useSymbole}
+        setUseSymbole={setUseSymbole}
+        Remember={Remember}
+        setRemember={setRemember}
+        Length={Length}
+        setLength={setLength}
+      />
+      </div>
+      <div className='picture' >
+      <img src={pic} />
+      <caption>{PasswordVariable.type}</caption>
     </div>
+      <PasswordGenerator 
+      PasswordVariable={PasswordVariable}
+      setPassword={setPassword}
+      useLettre={useLettre}
+      useNombre={useNombre}
+      useSymbole={useSymbole}
+      Remember={Remember}
+      Length={Length}
+      /> 
+      
+
+    </div>
+    
   );
 }
 

@@ -1,0 +1,43 @@
+.Features-Box
+{
+    background-color: #F9FBF2;
+    width: 500px;
+    border-radius: 10px;
+    padding: 50px;
+    padding-right: 10px;
+    margin: 50px;
+    font-size: large;
+    font-weight: 700;
+    border: 2.5px solid black;
+}
+.Features-Box button
+{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0E1C36;
+    color: white;
+    font-size: x-large;
+}
+.Features-Box li,button
+{
+    cursor: pointer;
+}
+.count
+{
+    margin-left:22%;
+}
+.no-answer
+{
+    color: #A31621;
+}
+.yes-answer
+{
+    color: #002500;
+}
+
+.Features-Box li
+{
+    width: 30%;
+}
+
