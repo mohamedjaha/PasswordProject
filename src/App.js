@@ -1,14 +1,15 @@
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import Features from './components/Features-Box/Features'
+import Features from './components/Features-Box/Features';
 import Password from './components/password/password';
-import PasswordGenerator from './components/PasswordGenerator'
-import tente from './PasswordGeneretor/tente.jpg'
-import castle from './PasswordGeneretor/castle.jpg'
-import house from './PasswordGeneretor/house.jpg'
+import PasswordGenerator from './components/PasswordGenerator';
+import tente from './PasswordGeneretor/tente.jpg';
+import castle from './PasswordGeneretor/castle.jpg';
+import house from './PasswordGeneretor/house.jpg';
 
-import { useState } from 'react'
+
+import { useState } from 'react';
 
 const App = () => {
   const[useLettre,setUseLettre] = useState(false);
@@ -69,6 +70,7 @@ const App = () => {
       Length={Length}
       /> 
       
+      <Footer/>
 
     </div>
     
